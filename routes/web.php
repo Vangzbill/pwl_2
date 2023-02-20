@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    echo "Selamat Datang";
-});
-
-Route::get('/about', function(){
-    echo "Nama : Sabilla Luthfi Rahmadhan";
-    echo "\nNIM  : 2141720122";
-});
-
-Route::get('/articles/{id}', function($id){
-    echo "Halaman Artikel dengan ID ". $id;
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/articles/{id}', [ArticleController::class, 'show']);
