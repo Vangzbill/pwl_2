@@ -32,4 +32,6 @@ class HomeController extends Controller
    public function index(){
       return view('pert3prak1.kontak');
    }
+
+   //
 }
